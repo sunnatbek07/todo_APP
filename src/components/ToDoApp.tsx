@@ -15,7 +15,7 @@ const ToDoApp: React.FC = () => {
     const [todos, setTodos] = useState<ToDo[]>([]);
 
     useEffect(() => {
-        useTodoApi.getAll().then((res: Object) => {
+        useTodoApi.getAll().then((res) => {
             setTodos(res.data);
         })
     }, [])

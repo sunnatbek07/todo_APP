@@ -2,14 +2,14 @@ import React from 'react';
 import './style.scss';
 
 interface State {
-    state: object;
+    title: string;
 }
 
-const ToDos: React.FC<State> = ({ state }) => {
+const ToDos: React.FC<{ state: State }> = ({ state: { title } }) => {
     return (
         <div className='todo2'>
             <input type="checkbox" />
-            <p>{state.title}</p>
+            <p>{title}</p>
         </div>
     )
 }
