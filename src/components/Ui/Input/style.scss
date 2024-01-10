@@ -1,0 +1,27 @@
+.input_btn {
+    display: flex;
+    max-width: 250px;
+    height: 32px;
+    margin: 0 auto 30px auto;
+
+    & input {
+        width: 100%;
+        padding: 9px 10px;
+        border-radius: 5px 0 0px 5px;
+        border: 1px solid rgba(177, 177, 177, 0.40);
+        background: var(--soft, #DBE2EF);
+        font-family: "Ubuntu Regular";
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button {
+        display: grid;
+        place-content: center;
+        border-radius: 0px 5px 5px 0px;
+        background: var(--secondary, #AAA);
+        width: 45px;
+    }
+}

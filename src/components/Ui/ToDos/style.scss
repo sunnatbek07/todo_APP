@@ -1,0 +1,23 @@
+.wrapper {
+
+    .todo2 {
+        width: 100%;
+        height: 55px;
+        border-radius: 5px;
+        background: #DBE2EF;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 15px 20px;
+
+        & input {
+            scale: 120%;
+            cursor: pointer;
+        }
+
+        & p {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
