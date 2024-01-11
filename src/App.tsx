@@ -1,8 +1,7 @@
-// import React, { useState, useEffect } from "react"
 
-import ToDoApp from "./components/ToDoApp"
+import ToDoApp from "./Layout/ToDoApp"
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <>
       <main>
