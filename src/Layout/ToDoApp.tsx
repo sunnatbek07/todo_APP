@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import InputBtn from '../components/Ui/Input';
 import ToDos from '../components/Ui/ToDos';
 import './style.scss';
-import useTodoApi from '../service/todos/useTodos';
 
 interface ToDo {
     userId: number;
@@ -16,13 +15,8 @@ const ToDoApp: React.FC = () => {
 
     useEffect(() => {
         const storedTodos = localStorage.getItem('todos');
-        if (storedTodos) {
-            setTodos(JSON.parse(storedTodos));
-        } else {
-            useTodoApi.getAll().then((res) => {
-                setTodos(res.data);
-            })
-        }
+        storedTodos ? setTodos(JSON.parse(storedTodos)) : null;
+
     }, [])
 
     const addTodo = (newTitle: string) => {
@@ -47,13 +41,19 @@ const ToDoApp: React.FC = () => {
                         <h2>To Do App</h2>
                         <InputBtn onAdd={addTodo} />
                     </div>
-                    <div className='wrapper'>
-                        {
-                            todos?.map((todo) => {
-                                return <ToDos key={todo.id} state={todo} onToggle={() => toggleTodo(todo.id)} />
-                            })
-                        }
-                    </div>
+                    {
+                        todos.length > 0 ?
+                            <div className='wrapper'>
+                                {
+                                    todos?.map((todo) => {
+                                        return <ToDos key={todo.id} state={todo} onToggle={() => toggleTodo(todo.id)} />
+                                    })
+                                }
+                            </div> :
+                            <div className='text-4xl text-[#3F72AF] font-semibold text-center my-5'>
+                                You don't have tasks!
+                            </div>
+                    }
                 </div>
             </section>
         </>
