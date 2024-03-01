@@ -17,7 +17,7 @@ const InputBtn: React.FC<InputProps> = ({ onAdd }) => {
     return (
         <>
             <div className='input_btn'>
-                <input type="text" placeholder='New Todo'
+                <input type="text" placeholder='Add Task'
                     value={newTitle}
                     onChange={(e) => setNewTitle(e.target.value)}
                 />
